@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from "next/link";
 import {getPostsMetadata} from "../components/getPostMetadata";
 import PostPreview from "../components/PostPreview";
 
