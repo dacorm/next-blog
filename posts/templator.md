@@ -57,14 +57,14 @@ date: "2023-03-29"
 ```js
 export const template = `
 <div class="{{ wrapperClassName }}">
-  <div class="chat__button">
+  <div class="todo__button">
     <input type="text" class="{{ inputClassName }}" oninput="{{ changeHandler }}">
     <button class="button" onclick="{{ handleClick }}" type="button">
       <span>{{ buttonText }}</span>
     </button>
   </div>
-  <ul class="{{ chatListClassName }}">
-    {{ chatListItems }}
+  <ul class="{{ todoListClassName }}">
+    {{ todoListItems }}
   </ul>
 </div>
 `;
@@ -132,14 +132,14 @@ export const compile = (template: string, props: Record<string, keyType>) => {
 ```ts
 export const todoTemplate = `
 <div class="{{ wrapperClassName }}">
-  <div class="chat__button">
+  <div class="todo__button">
     <input type="text" class="{{ inputClassName }}" oninput="{{ changeHandler }}">
     <button class="button" onclick="{{ handleClick }}" type="button">
       <span>{{ buttonText }}</span>
     </button>
   </div>
-  <ul class="{{ chatListClassName }}">
-    {{ chatListItems }}
+  <ul class="{{ todoListClassName }}">
+    {{ todoListItems }}
   </ul>
 </div>
 `;
@@ -170,9 +170,9 @@ const app = document.querySelector('#app');
 const todoList = compile(todoTemplate, {
   wrapperClassName: 'todo__wrapper',
     buttonText: 'Добавить задачу',
-    chatListClassName: 'todo__list',
+    todoListClassName: 'todo__list',
     inputClassName: 'todo__input',
-    chatListItems: todos.map(item => (
+    todoListItems: todos.map(item => (
         `<li class="todo__item">${item.text}</li>`
     ))
 })
